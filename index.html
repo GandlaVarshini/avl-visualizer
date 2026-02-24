@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVL Pro | Advanced Tree Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <div class="logo-icon">AVL</div>
+            <span>Visualizer Pro</span>
+        </div>
+
+        <!-- TOP CONTROLS WRAPPER -->
+        <div class="top-controls">
+
+            <div class="nav-section">Operations</div>
+            <input type="number" id="nodeValue" placeholder="Value (0-999)">
+            <button id="insertBtn" class="btn-primary">Insert</button>
+            <button id="deleteBtn" class="btn-danger">Delete</button>
+            <button id="searchBtn" class="btn-secondary">Search</button>
+
+            <div class="nav-section">Persistence</div>
+            <button id="saveBtn" class="btn-outline">Save to Local</button>
+            <button id="loadBtn" class="btn-outline">Restore Tree</button>
+            <button id="exportBtn" class="btn-outline">Export PNG</button>
+            <button id="clearBtn" class="btn-ghost">Clear All</button>
+
+        </div>
+
+        <!-- HISTORY SECTION -->
+        <div class="history-section">
+            <h3>History</h3>
+            <div id="historyList">No operations yet</div>
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="stats-card">
+            <h3>Statistics</h3>
+            <div>Height: <span id="statHeight">0</span></div>
+            <div>Nodes: <span id="statNodes">0</span></div>
+            <div>Last Rotation: <span id="statRotation">None</span></div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="visualizer-card">
+            <div id="drawArea">
+                <svg id="treeSvg"></svg>
+            </div>
+        </div>
+
+        <div class="traversal-footer">
+            <div><strong>Inorder:</strong> <span id="inorder">[]</span></div>
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
